@@ -28,7 +28,7 @@ jobs:
     
     # - run: flutter format --set-exit-if-changed
     
-    - run: flutter analyse
+    - run: flutter analyze
     
     - run: flutter test
     
