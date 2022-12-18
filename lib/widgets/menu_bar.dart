@@ -109,6 +109,23 @@ class MenuBar extends StatelessWidget {
                 newPage: sizeW < kSmallDeviceW,
               ),
             ),
+            Icon(Icons.circle, size: 8, color: dividerColor),
+            Padding(
+              padding: const EdgeInsetsDirectional.only(end: 12),
+              child: ActionOption(
+                text: 'To Morse code',
+                action: () => context.read<TextCubit>().toMorse(),
+                newPage: sizeW < kSmallDeviceW,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsetsDirectional.only(end: 12),
+              child: ActionOption(
+                text: 'From Morse code',
+                action: () => context.read<TextCubit>().fromMorse(),
+                newPage: sizeW < kSmallDeviceW,
+              ),
+            ),
           ],
         ),
       ),

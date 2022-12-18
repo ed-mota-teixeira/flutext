@@ -3,6 +3,7 @@ import 'package:flutext/process/actions/convert_diacritics.dart';
 import 'package:flutext/process/actions/html5_template.dart';
 import 'package:flutext/process/actions/lorem_ipsum_template.dart';
 import 'package:flutext/process/actions/lowercase.dart';
+import 'package:flutext/process/actions/morse.dart';
 import 'package:flutext/process/actions/only_numbers.dart';
 import 'package:flutext/process/actions/remove_digits.dart';
 import 'package:flutext/process/actions/uppercase.dart';
@@ -32,4 +33,8 @@ class TextCubit extends Cubit<String> {
   void calculateHash512() => emit(CalculateSHA512().executeAction(state));
 
   void loremIpsum() => emit(LoremIpsumTemplate().executeAction(state));
+
+  void toMorse() => emit(ToMorse().executeAction(state));
+
+  void fromMorse() => emit(FromMorse().executeAction(state));
 }
