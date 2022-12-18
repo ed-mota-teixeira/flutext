@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final sizeW = MediaQuery.of(context).size.width;
+    // final sizeW = MediaQuery.of(context).size.width;
 
     return SafeArea(
       child: Scaffold(
