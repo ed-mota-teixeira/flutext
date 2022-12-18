@@ -1,9 +1,6 @@
-import 'package:flutext/process/diacritics.dart';
-
 extension MorseCode on String {
   /*
   Letters are separated by spaces and words by "/".
-  The text translation will appear in the bottom box.
   If a letter cannot be translated a "#" will appear in the output.
   */
   static const morseChart = {
