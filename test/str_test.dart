@@ -1,13 +1,14 @@
 import 'package:flutext/process/actions/calculate_hash.dart';
 import 'package:flutext/process/actions/convert_diacritics.dart';
 import 'package:flutext/process/actions/only_numbers.dart';
+import 'package:flutext/process/actions/prefix_suffix_per_line.dart';
 import 'package:flutext/process/actions/remove_digits.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   const testString = 'Hello there. 1 this should be title cased... 3right? hum...!?. CalÇado#y-!';
 
-  group('Executioner methods', () {
+  group('Executioner String methods', () {
     test('Remove all numbers', () {
       final RemoveDigits tCase = RemoveDigits();
       final String r = tCase.executeAction(testString);
@@ -42,6 +43,13 @@ void main() {
       final CalculateSHA512 tCase = CalculateSHA512();
       final String r = tCase.executeAction(testString);
       expect(r, '324dcca66556a3d5b60619aac803b9580f96b38a8cfd27201e2db29841c9a635dbd0d5bf2786351651029bc1ab4242d044ba8fcde1af522aab867f59d2d82da2');
+    });
+
+
+    test('Single quote', () {
+      final PrefixSuffixPerLine psPerLine = PrefixSuffixPerLine();
+      final String r = psPerLine.executeAction(testString);
+      expect(r, "'Hello there. 1 this should be title cased... 3right? hum...!?. CalÇado#y-!'\n");
     });
   });
 }

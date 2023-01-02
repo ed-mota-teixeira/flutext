@@ -69,6 +69,15 @@ class MenuBar extends StatelessWidget {
             ),
             Icon(Icons.circle, size: 8, color: dividerColor),
             Padding(
+              padding: const EdgeInsetsDirectional.only(end: 12),
+              child: ActionOption(
+                text: "Single quote",
+                action: () => context.read<TextCubit>().singleQuotePerLine(),
+                newPage: sizeW < kSmallDeviceW,
+              ),
+            ),
+            Icon(Icons.circle, size: 8, color: dividerColor),
+            Padding(
               padding: const EdgeInsetsDirectional.only(start: 12, end: 12),
               child: ActionOption(
                 text: 'HTML template',
