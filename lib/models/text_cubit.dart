@@ -9,6 +9,8 @@ import 'package:flutext/process/actions/remove_digits.dart';
 import 'package:flutext/process/actions/uppercase.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../process/actions/prefix_suffix_per_line.dart';
+
 class TextCubit extends Cubit<String> {
   TextCubit() : super('');
 
@@ -37,4 +39,6 @@ class TextCubit extends Cubit<String> {
   void toMorse() => emit(ToMorse().executeAction(state));
 
   void fromMorse() => emit(FromMorse().executeAction(state));
+
+  void singleQuotePerLine() => emit(PrefixSuffixPerLine().executeAction(state));
 }
